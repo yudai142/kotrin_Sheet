@@ -14,7 +14,7 @@
         
         <ProgressBar
             android:id="@+id/writeProgressBar"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             />
@@ -67,5 +67,10 @@
     <Button
         android:id="@+id/btnSaveToDrive"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:background="#23AAE6"
+        android:layout_alignParentBottom="true"
+        android:text="Save To Drive"
+        android:textSize="20sp"
+        android:textColor="#000000"/>
 </RelativeLayout>
