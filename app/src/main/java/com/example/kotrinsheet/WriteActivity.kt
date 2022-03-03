@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
@@ -36,19 +37,19 @@ class WriteActivity : AppCompatActivity() {
         btnSaveToDrive.setOnClickListener {
             if(edtBookName.text.toString().isEmpty() or edtBookAuthor.text.toString().isEmpty() or
                     edtBookPrice.text.toString().isEmpty() or ratingBar.rating.toString().isEmpty()){
-                Toast.makeText(this@writeActivity,"Enter All Data",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@WriteActivity,"Enter All Data",Toast.LENGTH_SHORT).show()
             }else{
 
                 val url="https://script.google.com/macros/s/AKfycbz9E6NzCQ2J95f-h6baQNnlTZ4nsQ2U1mBIxAPuHo1mwxevFVWmfmS70q_LqIvkxvG_bA/exec"
                 val stringRequest=object :StringRequest(Request.Method.POST,url,
                     Response.Listener {
-                        Toast.makeText(this@writeActivity,it.toString(),Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@WriteActivity,it.toString(),Toast.LENGTH_SHORT).show()
                     },
                     Response.ErrorListener {
-                        Toast.makeText(this@writeActivity,it.toString(),Toast.LENTH_SHORT).show()
+                        Toast.makeText(this@WriteActivity,it.toString(),Toast.LENGTH_SHORT).show()
                     }){
                     override fun getParams(): MutableMap<String, String> {
-                        val params=HashMap<StringRequest>()
+                        val params=HashMap<String,String>()
                         params["bookName"]=edtBookName.text.toString()
                         params["bookAuthor"]=edtBookAuthor.text.toString()
                         params["bookPrice"]=edtBookPrice.text.toString()
@@ -56,7 +57,7 @@ class WriteActivity : AppCompatActivity() {
                         return params
                     }
                 }
-                val queue= Volley.newRequestQueue(this@writeActivity)
+                val queue= Volley.newRequestQueue(this@WriteActivity)
                 queue.add(stringRequest)
             }
         }
