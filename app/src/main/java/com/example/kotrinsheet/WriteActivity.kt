@@ -40,7 +40,7 @@ class WriteActivity : AppCompatActivity() {
                 Toast.makeText(this@WriteActivity,"Enter All Data",Toast.LENGTH_SHORT).show()
             }else{
 
-                val url="https://script.google.com/macros/s/AKfycbz9E6NzCQ2J95f-h6baQNnlTZ4nsQ2U1mBIxAPuHo1mwxevFVWmfmS70q_LqIvkxvG_bA/exec"
+                val url="https://script.google.com/macros/s/AKfycbwdqQpsOmGvCsvnR2kVi4dOfVNmddp-9dkvzbzOStVJaA28CZZASofW0Dv3PfQ-h-FeTQ/exec"
                 val stringRequest=object :StringRequest(Request.Method.POST,url,
                     Response.Listener {
                         Toast.makeText(this@WriteActivity,it.toString(),Toast.LENGTH_SHORT).show()
