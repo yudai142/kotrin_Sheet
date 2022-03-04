@@ -39,14 +39,20 @@ class WriteActivity : AppCompatActivity() {
                     edtBookPrice.text.toString().isEmpty() or ratingBar.rating.toString().isEmpty()){
                 Toast.makeText(this@WriteActivity,"Enter All Data",Toast.LENGTH_SHORT).show()
             }else{
+                writeProgressLayout.visibility= View.VISIBLE
+                writeProgressBar.visibility=View.VISIBLE
 
                 val url="https://script.google.com/macros/s/AKfycbwdqQpsOmGvCsvnR2kVi4dOfVNmddp-9dkvzbzOStVJaA28CZZASofW0Dv3PfQ-h-FeTQ/exec"
                 val stringRequest=object :StringRequest(Request.Method.POST,url,
                     Response.Listener {
                         Toast.makeText(this@WriteActivity,it.toString(),Toast.LENGTH_SHORT).show()
+                        writeProgressLayout.visibility= View.GONE
+                        writeProgressBar.visibility=View.GONE
                     },
                     Response.ErrorListener {
                         Toast.makeText(this@WriteActivity,it.toString(),Toast.LENGTH_SHORT).show()
+                        writeProgressLayout.visibility= View.GONE
+                        writeProgressBar.visibility=View.GONE
                     }){
                     override fun getParams(): MutableMap<String, String> {
                         val params=HashMap<String,String>()
