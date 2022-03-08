@@ -42,7 +42,7 @@ class WriteActivity : AppCompatActivity() {
                 writeProgressLayout.visibility= View.VISIBLE
                 writeProgressBar.visibility=View.VISIBLE
 
-                val url="https://script.google.com/macros/s/AKfycbwdqQpsOmGvCsvnR2kVi4dOfVNmddp-9dkvzbzOStVJaA28CZZASofW0Dv3PfQ-h-FeTQ/exec"
+                val url="https://script.google.com/macros/s/AKfycbxDMMC57T4Beyzpq0-QqwbY7DwNd4k7ZBlBStX78yZZOM65PIawgN77m4g3KOHD04Z5/exec"
                 val stringRequest=object :StringRequest(Request.Method.POST,url,
                     Response.Listener {
                         Toast.makeText(this@WriteActivity,it.toString(),Toast.LENGTH_SHORT).show()
